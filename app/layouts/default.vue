@@ -2,6 +2,7 @@
 const { data: navigation } = await useAsyncData('navigation', () => {
   return queryCollectionNavigation('page')
 })
+
 console.log('navigation', navigation.value);
 
 const isOpen = ref(false)
