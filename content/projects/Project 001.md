@@ -1,6 +1,8 @@
 ---
-published = true
-image = '/test.jpg'
+image: /test.jpg
+tags:
+  - S
+  - Exterieur
 ---
 
 # Project 001
