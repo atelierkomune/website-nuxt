@@ -1,19 +1,16 @@
 <script setup lang="ts">
-import type { NavigationMenuItem } from '@nuxt/ui';
+const isOpen = ref(false)
 
 const { data: navigation } = await useAsyncData('navigation', () => {
-  return queryCollectionNavigation('page', ['title', 'path', 'showPageInMenu', 'body'])
+  return queryCollectionNavigation('page', ['stem', 'title', 'path', 'showPageInMenu', 'body'])
 })
 
-console.log('navigation', navigation.value);
-
-const isOpen = ref(false)
 const items = computed(() => {
-  return navigation.value?.map<NavigationMenuItem>((item) => ({
+  return navigation.value?.map((item) => ({
+    stem: item.stem,
     label: item.title,
     to: item.path,
-    slot: item.showPageInMenu ? 'body' as const : undefined,
-    children: item.showPageInMenu ? [{ body: item.body }] : undefined
+    page: item.showPageInMenu && item.body
   }))
 })
 </script>
@@ -22,14 +19,7 @@ const items = computed(() => {
     <UDrawer v-model:open="isOpen" direction="left" fixed>
       <template #content>
         <div class="w-3xs p-4">
-          <img src="/favicon.ico" alt="logo" class="w-20">
-          <UNavigationMenu orientation="vertical" :items="items">
-            <template #item-content="{ item }">
-              {{ items }}
-              <ContentRenderer v-for="child in item.children" :key="child.path" :value="child.body" />
-            </template>
-          </UNavigationMenu>  
-          <DarkModeButton />
+          <i>INSERT MENU HERE</i>
         </div>
       </template>
     </UDrawer>
@@ -38,13 +28,21 @@ const items = computed(() => {
       <div class="sticky z-10 top-4 md:top-0 w-full max-w-60 md:relative">
         <div class="hidden md:block sticky top-4 flex justify-between items-center">
           <img src="/favicon.ico" alt="logo" class="w-20">
-          <UNavigationMenu orientation="vertical" :items="items">
-            <template #item-content="{ item }">
-              coucou
-              <pre>{{ item }}</pre>
-              <ContentRenderer v-for="child in item.children" :key="child.path" :value="child.body" />
+          <nav class="grid">
+            <template v-for="item in items" :key="item.to">
+              <UCollapsible v-if="item.page">
+                <UButton block type="button" variant="ghost" class="justify-start font-extrabold p-0">
+                  {{ item.label }}
+                </UButton>
+                <template #content>
+                  <ContentRenderer :value="item.page" class="text-xs p-2" />
+                </template>
+              </UCollapsible>
+              <UButton v-else block type="button" variant="ghost" class="justify-start font-extrabold p-0" :to="item.to">
+                {{ item.label }}
+              </UButton>
             </template>
-          </UNavigationMenu>
+          </nav>
           <DarkModeButton />
         </div>
 
