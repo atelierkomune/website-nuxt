@@ -3,11 +3,23 @@ const { data: navigation } = await useAsyncData('navigation', () => {
   return queryCollectionNavigation('page')
 })
 
+const { data: navigationProjects } = await useAsyncData('navigationProjects', () => {
+  return queryCollectionNavigation('projects')
+})
+
 console.log('navigation', navigation.value);
+console.log('navigationProjects', navigationProjects.value);
 
 const isOpen = ref(false)
 const items = computed(() => {
   return navigation.value?.map((item) => ({
+    label: item.title,
+    to: item.path
+  }))
+})
+
+const itemsProjects = computed(() => {
+  return navigationProjects.value?.map((item) => ({
     label: item.title,
     to: item.path
   }))
@@ -20,6 +32,9 @@ const items = computed(() => {
         <UNavigationMenu orientation="vertical" :items="items" />
         <hr class="w-full my-4 border-t border-gray-200">
         <DarkModeButton />
+
+        <hr>
+        <UNavigationMenu orientation="vertical" :items="itemsProjects" />
       </div>
 
       <UButton

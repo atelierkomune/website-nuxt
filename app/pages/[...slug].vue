@@ -2,13 +2,13 @@
 const route = useRoute()
 const { data: page } = await useAsyncData(
   route.path,
-  () => queryCollection('project').path(route.path).first(),
+  () => queryCollection('page').path(route.path).first(),
   { watch: [() => route.path] }
 )
 
 const { data: surroundings } = await useAsyncData(
   `${route.path}-surroundings`,
-  () => queryCollectionItemSurroundings('project', route.path),
+  () => queryCollectionItemSurroundings('page', route.path),
   { watch: [() => route.path] }
 )
 

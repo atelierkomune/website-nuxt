@@ -4,20 +4,28 @@ export default defineContentConfig({
   collections: {
     page: defineCollection({
       type: 'page',
-      source: '/*.md',
+      source: {
+        include: '*.md',
+        exclude: ['projects/**'],
+        prefix: '/',
+      },
       schema: z.object({
         published: z.boolean(),
         date: z.string(),
-        type: z.enum(['page', 'project'])
+        showPageInMenu: z.boolean(),
       })
     }),
-    project: defineCollection({
+    projects: defineCollection({
       type: 'page',
-      source: '/projects/*.md',
+      source: {
+        include: 'projects/*.md',
+        prefix: '/',
+      },
       schema: z.object({
         published: z.boolean(),
         date: z.string(),
-        image: z.string()
+        image: z.string(),
+        tags: z.array(z.string()),
       })
     })
   }

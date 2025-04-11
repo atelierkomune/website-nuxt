@@ -3,14 +3,18 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
+    '@nuxthub/core',
     '@nuxt/ui',
     '@nuxt/eslint',
-    '@nuxt/content',
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/image',
-    '@nuxthub/core'
+    '@nuxt/content',
   ],
+
+  hub: {
+    database: true
+  },
 
   image: {
     baseURL: 'https://newatelierkomune.barquette.club'
