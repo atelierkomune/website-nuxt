@@ -38,3 +38,5 @@ jobs:
         id: deploy
         with:
           project-key: website-nuxt-avz7
+        env:
+          NUXT_HUB_USER_TOKEN: ${{ secrets.NUXT_HUB_USER_TOKEN }}
