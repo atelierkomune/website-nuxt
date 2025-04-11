@@ -17,7 +17,31 @@
   --color-green-950: #052e16;
 }
 
-.page img {
+.page h1 {
+  @apply text-2xl font-bold mb-4;
+}
+
+.page h2 {  
+  @apply text-xl font-bold mb-3;
+}
+
+.page h3 {
+  @apply text-lg font-bold mb-2;
+}
+
+.page p {
+  @apply mb-4;
+}
+
+.page ul {
+  @apply mb-4;
+}
+
+.page ol {
+  @apply mb-4;
+}
+
+.page--projects img {
   max-height: 90vh;
   margin: 1rem 0;
 }

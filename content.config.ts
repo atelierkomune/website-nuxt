@@ -2,6 +2,7 @@ import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
 export default defineContentConfig({
   collections: {
+    // page collection
     page: defineCollection({
       type: 'page',
       source: {
@@ -15,11 +16,12 @@ export default defineContentConfig({
         showPageInMenu: z.boolean(),
       })
     }),
+    // projects collection
     projects: defineCollection({
       type: 'page',
       source: {
         include: 'projects/*.md',
-        prefix: '/',
+        prefix: '/projects',
       },
       schema: z.object({
         published: z.boolean(),

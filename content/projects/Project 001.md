@@ -1,5 +1,5 @@
 ---
-image: /test.jpg
+image: /projects/test.jpg
 tags:
   - S
   - Exterieur

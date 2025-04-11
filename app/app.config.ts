@@ -10,6 +10,12 @@ export default defineAppConfig({
         // Set default button color to neutral
         // color: 'neutral'
       }
+    },
+    navigationMenu: {
+      slots: {
+        link: 'font-bold',
+        linkTrailingIcon: 'size-2'
+      }
     }
   }
 })
