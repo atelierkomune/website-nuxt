@@ -37,7 +37,4 @@ jobs:
         uses: nuxt-hub/action@v1
         id: deploy
         with:
-          project-key: web-atelierkomu-q8mu
-        env:
-          NUXT_HUB_USER_TOKEN: ${{ secrets.NUXT_HUB_USER_TOKEN }}
-
+          project-key: website-nuxt-avz7
