@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   ],
 
   image: {
-    baseURL: 'https://fanf.barquette.club'
+    baseURL: 'https://newatelierkomune.barquette.club'
   },
 
   css: ['~/assets/css/main.css'],
