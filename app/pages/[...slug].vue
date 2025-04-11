@@ -2,13 +2,13 @@
 const route = useRoute()
 const { data: page } = await useAsyncData(
   route.path,
-  () => queryCollection('content').path(route.path).first(),
+  () => queryCollection('project').path(route.path).first(),
   { watch: [() => route.path] }
 )
 
 const { data: surroundings } = await useAsyncData(
   `${route.path}-surroundings`,
-  () => queryCollectionItemSurroundings('content', route.path),
+  () => queryCollectionItemSurroundings('project', route.path),
   { watch: [() => route.path] }
 )
 
@@ -34,7 +34,7 @@ if (!page.value) {
           <UButton 
             v-if="surroundings[0]?.path"
             variant="ghost" 
-            :to="surroundings[0]?.path" 
+            :to="surroundings[0]?.path"
             icon="i-mdi-arrow-left" 
             class="w-full justify-start">
             <div>
