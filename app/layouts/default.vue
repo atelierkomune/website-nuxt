@@ -16,11 +16,23 @@ const items = computed(() => {
 </script>
 <template>
   <div>
-    <UDrawer v-model:open="isOpen" direction="left" fixed>
+    <UDrawer v-model:open="isOpen" fixed>
       <template #content>
-        <div class="w-3xs p-4">
-          <i>INSERT MENU HERE</i>
-        </div>
+        <nav class="grid">
+            <template v-for="item in items" :key="item.to">
+              <UCollapsible v-if="item.page">
+                <UButton block type="button" variant="ghost" class="justify-start font-extrabold p-0">
+                  {{ item.label }}
+                </UButton>
+                <template #content>
+                  <ContentRenderer :value="item.page" class="text-xs p-2" />
+                </template>
+              </UCollapsible>
+              <UButton v-else block type="button" variant="ghost" class="justify-start font-extrabold p-0" :to="item.to">
+                {{ item.label }}
+              </UButton>
+            </template>
+          </nav>
       </template>
     </UDrawer>
 
