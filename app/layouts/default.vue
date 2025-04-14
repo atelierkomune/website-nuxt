@@ -45,7 +45,7 @@ const items = computed(() => {
           <img :src="colorMode.value === 'dark' ? '/logo-dark.png' : '/logo.png'" alt="logo" class="w-20">
           <nav aria-label="Navigation">
             <template v-for="item in items" :key="item.to">
-              <UCollapsible v-if="item.page" class="w-full" :open="location.hash === `#${item.stem}`">
+              <UCollapsible v-if="item.page" class="w-full">
                 <ULink block type="button" variant="ghost" class="justify-start font-extrabold" :to="`#${item.stem}`">
                   {{ item.label }}
                 </ULink>
