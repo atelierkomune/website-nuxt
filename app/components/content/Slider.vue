@@ -9,7 +9,7 @@ const props = defineProps<{
 
 <template>
     <div class="slider">
-        <slot v-if="props.images?.length" />
+        <slot v-if="!props.images?.length" />
         <div
             v-for="(item, index) in props.images" 
             :key="`${item.src}-${index}`"

@@ -22,13 +22,23 @@ const { data: projects } = await useAsyncData(
 .project {
   position: relative;
   z-index: 1;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease-out;
   transform: scale(1);
+}
+
+.project:hover {
+  transform: scale(1.075);
 }
 
 .project-img {
   transition: box-shadow 0.6s ease;
+  box-shadow: 0 .5em 8em 0 rgba(0, 0, 0, 0);
+  will-change: box-shadow;
   border-radius: 0.1rem;
+}
+
+.project:hover .project-img {
+  box-shadow: 0 1em 8em 0 rgba(46, 46, 46, 0.5);
 }
 
 .project-title {
@@ -43,16 +53,8 @@ const { data: projects } = await useAsyncData(
 
   @media (min-width: 768px) {
     opacity: 0;
-    transform: translateY(0);
+    transform: translateY(-30%);
   }
-}
-
-.project:hover {
-  transform: scale(1.05);
-}
-
-.project:hover .project-img {
-  box-shadow: 0 .5em 2em 0 rgba(0, 0, 0, 0.1);
 }
 
 .project:hover .project-title {
