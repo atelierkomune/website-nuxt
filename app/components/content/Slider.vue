@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-    images: {
+    images?: {
         src: string,
         alt: string,
     }[]
@@ -9,13 +9,13 @@ const props = defineProps<{
 
 <template>
     <div class="slider">
-        <div 
+        <slot v-if="props.images?.length" />
+        <div
             v-for="(item, index) in props.images" 
             :key="`${item.src}-${index}`"
             class="slide">
             <img :src="item.src" :alt="item.alt">
         </div>
-        <slot />
     </div>
 </template>
 
