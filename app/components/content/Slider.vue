@@ -53,18 +53,22 @@ const prevImage = () => {
 
 .slide {
     position: relative;
-    transition: opacity 0.3s ease;
+    transition: 0.6s ease;
 
     @media (min-width: 768px) {
         position: absolute;
         opacity: 0;
         height: 100%;
         width: 100%;
+        cursor: e-resize;
+        transform: scale(0.98);
     }
 }
 
 .slide--active {
     opacity: 1;
+    transition-delay: 0.6s;
+    transform: scale(1);
 }
 
 .slide img {
