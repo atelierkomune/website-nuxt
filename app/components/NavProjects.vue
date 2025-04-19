@@ -13,11 +13,11 @@ const { data: surroundings } = await useAsyncData(
       <div>
         <UButton 
           v-if="surroundings[0]?.path"
-          variant="ghost"
+          variant="soft"
           color="neutral" 
           :to="surroundings[0]?.path"
           icon="i-mdi-arrow-left" 
-          class="w-full justify-start pr-8">
+          class="w-full justify-start">
           <div>
             <small>Project précédent</small>
           <br>
@@ -28,11 +28,11 @@ const { data: surroundings } = await useAsyncData(
       <div>
         <UButton 
           v-if="surroundings[1]?.path"
-          variant="ghost"
+          variant="soft"
           color="neutral" 
           :to="surroundings[1]?.path" 
           trailing-icon="i-mdi-arrow-right" 
-          class="w-full justify-end text-right pl-8">
+          class="w-full justify-end text-right">
           <div>
             <small>Project suivant</small>
           <br>
