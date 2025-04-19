@@ -1,8 +1,44 @@
 ---
+title: Project 013
 image: /projects/test.jpg
 tags:
   - L
   - Exterieur
 ---
 
-# Project 003
+::slider
+
+  ::slide
+  ---
+  src: /projects/test.jpg
+  alt: image alt
+  caption: image caption
+  ---
+  ::
+
+  ::slide
+  ---
+  src: /projects/test.jpg
+  alt: image alt
+  caption: image caption
+  ---
+  ::
+
+  ::slide
+  ---
+  src: /projects/test.jpg
+  alt: image alt
+  caption: image caption
+  ---
+  ::
+
+  ::slide
+  ---
+  src: /projects/test.jpg
+  alt: image alt
+  caption: image caption
+  ---
+  ::
+
+::
+

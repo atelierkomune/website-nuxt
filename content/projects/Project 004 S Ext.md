@@ -1,8 +1,44 @@
 ---
+title: Project 004
 image: /projects/test.jpg
 tags:
   - S
   - Exterieur
 ---
 
-# Project 004
+::slider
+
+  ::slide
+  ---
+  src: /projects/test.jpg
+  alt: image alt
+  caption: image caption
+  ---
+  ::
+
+  ::slide
+  ---
+  src: /projects/test.jpg
+  alt: image alt
+  caption: image caption
+  ---
+  ::
+
+  ::slide
+  ---
+  src: /projects/test.jpg
+  alt: image alt
+  caption: image caption
+  ---
+  ::
+
+  ::slide
+  ---
+  src: /projects/test.jpg
+  alt: image alt
+  caption: image caption
+  ---
+  ::
+
+::
+

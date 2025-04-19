@@ -2,7 +2,8 @@
 @import "@nuxt/ui";
 
 @theme static {
-  --font-sans: 'IBM Plex Mono', sans-serif;
+  --font-sans: 'Outfit', sans-serif;
+  --font-serif: 'IBM Plex Mono', serif;
 
   --color-green-50: #effdf5;
   --color-green-100: #d9fbe8;
@@ -18,7 +19,7 @@
 }
 
 .page h1 {
-  @apply text-2xl font-bold mb-4;
+  @apply text-2xl font-bold mb-8;
 }
 
 .page h2 {  

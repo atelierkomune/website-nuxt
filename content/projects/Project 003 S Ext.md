@@ -1,8 +1,44 @@
 ---
+title: Project 003
 image: /projects/test.jpg
 tags:
   - S
   - Exterieur
 ---
 
-# Project 003
+::slider
+
+  ::slide
+  ---
+  src: /projects/test.jpg
+  alt: image alt
+  caption: image caption
+  ---
+  ::
+
+  ::slide
+  ---
+  src: /projects/test.jpg
+  alt: image alt
+  caption: image caption
+  ---
+  ::
+
+  ::slide
+  ---
+  src: /projects/test.jpg
+  alt: image alt
+  caption: image caption
+  ---
+  ::
+
+  ::slide
+  ---
+  src: /projects/test.jpg
+  alt: image alt
+  caption: image caption
+  ---
+  ::
+
+::
+

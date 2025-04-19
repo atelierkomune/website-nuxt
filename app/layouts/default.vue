@@ -1,75 +1,39 @@
 <script setup lang="ts">
 const isOpen = ref(false)
-const location = useBrowserLocation()
-const colorMode = useColorMode()
-
-const { data: navigation } = await useAsyncData('navigation', () => {
-  return queryCollectionNavigation('page', ['stem', 'title', 'path', 'showPageInMenu', 'body'])
-})
-
-const items = computed(() => {
-  return navigation.value?.map((item) => ({
-    stem: item.stem,
-    label: item.title,
-    to: item.path,
-    page: item.showPageInMenu && item.body
-  }))
-})
 </script>
 <template>
-  <div>
+  <div class="h-screen">
     <UDrawer v-model:open="isOpen" fixed direction="left" class="w-full">
       <template #content>
-        <nav class="overflow-y-auto p-4">
-          <template v-for="item in items" :key="item.to">
-            <UCollapsible v-if="item.page">
-              <ULink block type="button" variant="ghost" class="justify-start font-extrabold">
-                {{ item.label }}
-              </ULink>
-              <template #content>
-                <ContentRenderer :value="item.page" class="text-xs p-2" />
-              </template>
-            </UCollapsible>
-            <ULink v-else block type="button" variant="ghost" class="justify-start font-extrabold" :to="item.to">
-              {{ item.label }}
-            </ULink>
-          </template>
-        </nav>
+        <NavBar class="p-8"/>
       </template>
     </UDrawer>
 
-    <div class="md:flex gap-8 p-4 md:p-6 lg:p-8">
+    <div class="md:flex gap-8 p-12">
 
       <div class="sticky z-10 top-4 md:top-0 w-full max-w-60 md:relative">
         <div class="hidden md:block sticky top-4 flex justify-between items-center">
-          <img :src="colorMode.value === 'dark' ? '/logo-dark.png' : '/logo.png'" alt="logo" class="w-20">
-          <nav aria-label="Navigation">
-            <template v-for="item in items" :key="item.to">
-              <UCollapsible v-if="item.page" class="w-full">
-                <ULink block type="button" variant="ghost" class="justify-start font-extrabold" :to="`#${item.stem}`">
-                  {{ item.label }}
-                </ULink>
-                <template #content>
-                  <ContentRenderer :value="item.page" class="text-xs p-2" />
-                </template>
-              </UCollapsible>
-              <ULink v-else block type="button" variant="ghost" class="justify-start font-extrabold" :to="item.to">
-                {{ item.label }}
-              </ULink>
-            </template>
-          </nav>
-          <DarkModeButton />
+          <NavBar />
         </div>
 
         <UButton
           class="md:hidden"
-          variant="ghost"
+          variant="soft"
+          color="neutral" 
           icon="i-mdi-menu" 
           @click="isOpen = true" />
       </div>
-      <div class="w-full">
+
+      <div class="w-full mt-4 md:mt-2">
+        <div class="md:hidden flex mb-8">
+          <LogoImg />
+        </div>
         <NuxtPage />
       </div>
+    </div>
+
+    <div class="fixed bottom-8 left-8 z-10">
+      <DarkModeButton/>
     </div>
   </div>
 </template>

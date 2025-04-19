@@ -16,7 +16,7 @@ const isDark = computed({
     <UButton
       :icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'"
       color="neutral"
-      variant="ghost"
+      variant="soft"
       @click="isDark = !isDark"
     />
 

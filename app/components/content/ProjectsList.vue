@@ -5,14 +5,14 @@ const { data: projects } = await useAsyncData(
 )
 </script>
 <template>
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 md:p-4">
     <div v-for="project in projects" :key="project.path" class="project">
-      <NuxtLink :to="project.path" class="grid items-center justify-center gap-2">
+      <NuxtLink :to="project.path">
         <img
           :src="project.image || '/projects/placeholder.jpg'" 
           :alt="project.title" 
           class="project-img w-full object-cover aspect-square">
-        <strong class="project-title">{{ project.title }}</strong>
+        <strong class="project-title text-sm">{{ project.title }}</strong>
       </NuxtLink>
     </div>
   </div>
@@ -28,19 +28,23 @@ const { data: projects } = await useAsyncData(
 
 .project-img {
   transition: box-shadow 0.6s ease;
-  border-radius: 0.2rem;
+  border-radius: 0.1rem;
 }
 
 .project-title {
   position: absolute;
   z-index: 10;
-  bottom: 0;
+  top: 100%;
   left: 0;
   right: 0;
   text-align: center;
-  opacity: 0;
-  transform: translateY(0%);
+  padding: 0.5em 0;
   transition: opacity 0.3s ease, transform 0.6s ease;
+
+  @media (min-width: 768px) {
+    opacity: 0;
+    transform: translateY(0);
+  }
 }
 
 .project:hover {
@@ -53,7 +57,7 @@ const { data: projects } = await useAsyncData(
 
 .project:hover .project-title {
   opacity: 1;
-  transform: translateY(100%);
+  transform: translateY(0);
 }
 
 </style>
