@@ -10,7 +10,7 @@ tags:
 ---
 images:
   - src: /projects/test.jpg
-    alt: alt image coucou
+    alt: alt image coucou ojojojoj
     caption: caption image coucou
   - src: /projects/test.jpg
     alt: alt image hello
