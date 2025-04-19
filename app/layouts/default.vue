@@ -24,7 +24,7 @@ const isOpen = ref(false)
           @click="isOpen = true" />
       </div>
 
-      <div class="w-full md:grid md:items-center">
+      <div class="w-full md:grid">
         <div class="md:hidden flex mt-4 mb-8">
           <LogoImg />
         </div>
