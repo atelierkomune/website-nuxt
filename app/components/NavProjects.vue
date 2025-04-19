@@ -9,17 +9,17 @@ const { data: surroundings } = await useAsyncData(
 )
 </script>
 <template>
-    <div v-if="surroundings" class="sticky bottom-8 grid grid-cols-2 gap-8 mt-4 px-8">
+    <div v-if="surroundings" class="sticky md:relative bottom-8 md:bottom-0 flex gap-8 mt-4 justify-between">
       <div>
         <UButton 
           v-if="surroundings[0]?.path"
-          variant="soft"
+          variant="ghost"
           color="neutral" 
           :to="surroundings[0]?.path"
           icon="i-mdi-arrow-left" 
-          class="w-full justify-start">
+          class="w-full justify-start pr-8">
           <div>
-            <small>previous page</small>
+            <small>Project précédent</small>
           <br>
           <span>{{ surroundings[0].title }}</span>
           </div>
@@ -28,13 +28,13 @@ const { data: surroundings } = await useAsyncData(
       <div>
         <UButton 
           v-if="surroundings[1]?.path"
-          variant="soft"
+          variant="ghost"
           color="neutral" 
           :to="surroundings[1]?.path" 
           trailing-icon="i-mdi-arrow-right" 
-          class="w-full justify-end text-right">
+          class="w-full justify-end text-right pl-8">
           <div>
-            <small>next page</small>
+            <small>Project suivant</small>
           <br>
           <span>{{ surroundings[1].title }}</span>
           </div>

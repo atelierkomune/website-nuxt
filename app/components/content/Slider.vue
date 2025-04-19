@@ -9,9 +9,12 @@ const props = defineProps<{
 
 const currentIndex = ref<number>(0)
 const nextImage = () => {
+    console.log('nextImage', Math.min(currentIndex.value + 1, props.images.length - 1));
+
     currentIndex.value = Math.min(currentIndex.value + 1, props.images.length - 1)
 }
 const prevImage = () => {
+    console.log('prevImage', currentIndex.value, Math.max(currentIndex.value - 1, 0));
     currentIndex.value = Math.max(currentIndex.value - 1, 0)
 }
 </script>
@@ -22,10 +25,10 @@ const prevImage = () => {
             <div
                 v-for="(item, index) in props.images" 
                 :key="`${item.src}-${index}`"
-                :class="['slide', { 'slide--active': index === currentIndex }]"
+                :class="['slide grid items-center', { 'slide--active': index === currentIndex }]"
                 @click="nextImage()">
                 <img :src="item.src" :alt="item.alt">
-                <div class="flex w-full justify-between">
+                <div class="md:hidden flex w-full justify-between">
                     <caption class="block">
                         {{ item.caption }}
                     </caption>
@@ -35,9 +38,27 @@ const prevImage = () => {
                 </div>
             </div>
         </div>
-        <div class="flex gap-4 justify-center">
-            <UButton class="hidden md:flex" icon="i-mdi-arrow-left" @click="prevImage" />
-            <UButton class="hidden md:flex" icon="i-mdi-arrow-right" @click="nextImage" />
+        <div class="flex w-full justify-between mt-4">
+            <div class="hidden md:flex gap-4 justify-center">
+                <UButton 
+                    :disabled="currentIndex <= 0" 
+                    variant="ghost" 
+                    size="sm" 
+                    icon="i-mdi-arrow-left" 
+                    @click="prevImage" />
+                <UButton 
+                    :disabled="currentIndex >= props.images.length - 1" 
+                    variant="ghost" 
+                    size="sm" 
+                    trailing-icon="i-mdi-arrow-right" 
+                    @click="nextImage" />
+            </div>
+            <caption class="block">
+                {{ props.images?.[currentIndex]?.caption }}
+            </caption>
+            <small class="text-right">
+                {{ currentIndex + 1 }} / {{ props.images.length }}
+            </small>
         </div>
     </div>
 </template>
@@ -47,7 +68,7 @@ const prevImage = () => {
     position: relative;
 
     @media (min-width: 768px) {
-        height: 75vh;
+        height: 66vh;
     }
 }
 
@@ -73,6 +94,13 @@ const prevImage = () => {
 
 .slide img {
     max-height: 100%;
-    max-width: 100%;
+    width: 100%;
+
+    @media (min-width: 768px) {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        overflow: hidden;
+    }
 }
 </style>

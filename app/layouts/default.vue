@@ -24,8 +24,8 @@ const isOpen = ref(false)
           @click="isOpen = true" />
       </div>
 
-      <div class="w-full mt-4 md:mt-2">
-        <div class="md:hidden flex mb-8">
+      <div class="w-full md:grid md:items-center">
+        <div class="md:hidden flex mt-4 mb-8">
           <LogoImg />
         </div>
         <NuxtPage />
