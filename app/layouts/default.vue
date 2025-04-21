@@ -9,7 +9,7 @@ const isOpen = ref(false)
       </template>
     </UDrawer>
 
-    <div class="md:flex gap-8 p-12">
+    <div class="md:flex gap-8 p-12 pb-32">
 
       <div class="sticky z-10 top-4 md:top-0 w-full max-w-60 md:relative">
         <div class="hidden md:block sticky top-4 flex justify-between items-center">
@@ -17,29 +17,18 @@ const isOpen = ref(false)
         </div>
 
         <UButton
-          class="md:hidden"
-          variant="soft"
-          color="neutral" 
-          icon="i-mdi-menu" 
-          @click="isOpen = true" />
+          class="md:hidden p-0"
+          variant="ghost"
+          color="neutral"
+          size="xs"
+          @click="isOpen = true">
+          <LogoImg />
+        </UButton>
       </div>
 
       <div class="w-full md:grid">
-        <div class="md:hidden flex mt-4 mb-8">
-          <LogoImg />
-        </div>
         <NuxtPage />
       </div>
     </div>
-
-    <div class="fixed bottom-8 left-8 z-10">
-      <DarkModeButton/>
-    </div>
   </div>
 </template>
-
-<style>
-nav a:hover {
-  transform: translateX(10px);
-} 
-</style>

@@ -11,7 +11,7 @@ const { data: projects } = await useAsyncData(
         <img
           :src="project.image || '/projects/placeholder.jpg'" 
           :alt="project.title" 
-          class="project-img w-full object-cover aspect-square">
+          class="project-img">
         <strong class="project-title text-sm">{{ project.title }}</strong>
       </NuxtLink>
     </div>
@@ -22,23 +22,18 @@ const { data: projects } = await useAsyncData(
 .project {
   position: relative;
   z-index: 1;
-  transition: transform 0.6s ease-out;
+  transition: transform 0.3s ease-out;
   transform: scale(1);
 }
 
-.project:hover {
-  transform: scale(1.075);
-}
-
 .project-img {
-  transition: box-shadow 0.6s ease;
-  box-shadow: 0 .5em 8em 0 rgba(0, 0, 0, 0);
+  transition: 0.6s ease;
+  box-shadow: 0 .25em 4em 0 rgba(0, 0, 0, 0);
   will-change: box-shadow;
-  border-radius: 0.1rem;
-}
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
 
-.project:hover .project-img {
-  box-shadow: 0 1em 8em 0 rgba(46, 46, 46, 0.5);
 }
 
 .project-title {
@@ -50,16 +45,28 @@ const { data: projects } = await useAsyncData(
   text-align: center;
   padding: 0.5em 0;
   transition: opacity 0.3s ease, transform 0.6s ease;
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .project:hover {
+    transform: scale(1.016);
+  }
+
+  .project:hover .project-img {
+    box-shadow: 0 1em 4em 0 rgba(46, 46, 46, 0.25);
+  }
+
+  .project-title {
     opacity: 0;
     transform: translateY(-30%);
   }
+
+  .project:hover .project-title {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 }
 
-.project:hover .project-title {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 </style>

@@ -14,7 +14,9 @@ const items = computed(() => {
 </script>
 <template>
   <div class="nav_bar">
-    <LogoImg />
+    <NuxtLink to="/">
+      <LogoImg />
+    </NuxtLink>
     <nav aria-label="Navigation" class="grid gap-2">
       <template v-for="item in items" :key="item.to">
         <!-- link -->
