@@ -2,7 +2,7 @@
 const isOpen = ref(false)
 </script>
 <template>
-  <div class="h-screen">
+  <div class="min-h-screen m-auto">
     <UDrawer v-model:open="isOpen" fixed direction="left" class="w-full">
       <template #content>
         <NavBar class="p-8"/>
@@ -17,7 +17,7 @@ const isOpen = ref(false)
         </div>
 
         <UButton
-          class="md:hidden p-0"
+          class="md:hidden p-0 rounded-none"
           variant="ghost"
           color="neutral"
           size="xs"

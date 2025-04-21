@@ -38,8 +38,8 @@ const prevImage = () => {
                 </div>
             </div>
         </div>
-        <div class="flex w-full justify-between mt-4">
-            <div class="hidden md:flex gap-4 justify-center">
+        <div class="hidden md:flex w-full justify-between mt-4">
+            <div class="flex gap-4 justify-center">
                 <UButton 
                     :disabled="currentIndex <= 0" 
                     variant="ghost" 
@@ -68,7 +68,7 @@ const prevImage = () => {
     position: relative;
 
     @media (min-width: 768px) {
-        height: 66vh;
+        height: 50vh;
     }
 }
 
