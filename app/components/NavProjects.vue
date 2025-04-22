@@ -19,7 +19,7 @@ const { data: surroundings } = await useAsyncData(
           icon="i-mdi-arrow-left" 
           class="w-full justify-start rounded-none">
           <div>
-            <small>Project précédent</small>
+            <small>Projet</small>
           <br>
           <span>{{ surroundings[0].title }}</span>
           </div>
@@ -34,7 +34,7 @@ const { data: surroundings } = await useAsyncData(
           trailing-icon="i-mdi-arrow-right" 
           class="w-full justify-end text-right rounded-none">
           <div>
-            <small>Project suivant</small>
+            <small>Projet</small>
           <br>
           <span>{{ surroundings[1].title }}</span>
           </div>
