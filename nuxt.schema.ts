@@ -2,18 +2,16 @@ import { field, group } from '@nuxt/content/preview'
 
 export default defineNuxtSchema({
   appConfig: {
-    parent: group({
+    ui: group({
       title: 'UI',
       description: 'UI configuration',
       icon: 'i-ph-palette-fill',
       fields: {
-        primary: field({
-          type: 'string',
-          title: 'Primary',
-          description: 'Primary color of your UI.',
-          icon: 'i-ph-palette',
-          default: 'sky',
-          required: ['sky', 'mint', 'rose', 'amber']
+        darkMode: field({
+            type: 'boolean',
+            title: 'Dark mode',
+            description: 'Enable dark mode on website',
+            default: false,
         })
       }
     })

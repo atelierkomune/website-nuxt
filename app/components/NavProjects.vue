@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const appConfig = useAppConfig()
 const props = defineProps<{
     path: string
 }>()
@@ -25,7 +26,7 @@ const { data: surroundings } = await useAsyncData(
           </div>
         </UButton>
       </div>
-      <div>
+      <div v-if="">
         <UButton 
           v-if="surroundings[1]?.path"
           variant="solid"
