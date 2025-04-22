@@ -26,7 +26,7 @@ const { data: surroundings } = await useAsyncData(
           </div>
         </UButton>
       </div>
-      <div v-if="">
+      <div v-if="appConfig.app.darkMode">
         <UButton 
           v-if="surroundings[1]?.path"
           variant="solid"

@@ -2,10 +2,10 @@ import { field, group } from '@nuxt/content/preview'
 
 export default defineNuxtSchema({
   appConfig: {
-    ui: group({
-      title: 'UI',
-      description: 'UI configuration',
-      icon: 'i-ph-palette-fill',
+    app: group({
+      title: 'App',
+      description: 'App configuration',
+      icon: 'i-mdi-application-brackets',
       fields: {
         darkMode: field({
             type: 'boolean',
