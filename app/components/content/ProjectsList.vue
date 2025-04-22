@@ -12,7 +12,7 @@ const { data: projects } = await useAsyncData(
           :src="project.image || '/projects/placeholder.jpg'" 
           :alt="project.title" 
           class="project-img">
-        <strong class="project-title text-sm">{{ project.title }}</strong>
+        <strong class="project-title text-sm md:text-xs">{{ project.title }}</strong>
       </NuxtLink>
     </div>
   </div>
@@ -23,17 +23,19 @@ const { data: projects } = await useAsyncData(
   position: relative;
   z-index: 1;
   transition: transform 0.3s ease-out;
+  will-change: transform;
   transform: scale(1);
+  transition-delay: 0.6s;
 }
 
 .project-img {
   transition: 0.6s ease;
   box-shadow: 0 .25em 4em 0 rgba(0, 0, 0, 0);
-  will-change: box-shadow;
+  will-change: box-shadow padding;
   width: 100%;
   aspect-ratio: 1;
   object-fit: contain;
-
+  transition-delay: 0.6s;
 }
 
 .project-title {
@@ -44,16 +46,20 @@ const { data: projects } = await useAsyncData(
   right: 0;
   text-align: center;
   padding: 0.5em 0;
-  transition: opacity 0.3s ease, transform 0.6s ease;
+  will-change: opacity transform;
+  transition: opacity 0.9s ease, transform 0.6s ease;
 }
 
 @media (min-width: 768px) {
   .project:hover {
-    transform: scale(1.016);
+    transform: scale(1.125);
+    transition-delay: 0s;
   }
 
   .project:hover .project-img {
+    padding: 0.75em;
     box-shadow: 0 1em 4em 0 rgba(46, 46, 46, 0.25);
+    transition-delay: 0s;
   }
 
   .project-title {
@@ -64,6 +70,7 @@ const { data: projects } = await useAsyncData(
   .project:hover .project-title {
     opacity: 1;
     transform: translateY(0);
+    transition-delay: 0.6s;
   }
 
 }
