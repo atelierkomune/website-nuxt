@@ -34,6 +34,11 @@ const items = computed(() => {
           </template>
         </UCollapsible>
       </template>
+
+      <!-- dark mode -->
+      <div class="mt-4">
+        <DarkModeButton />
+      </div>
     </nav>
   </div>
 </template>
