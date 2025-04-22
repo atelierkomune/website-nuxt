@@ -1,4 +1,7 @@
 <script setup lang="ts">
+const appConfig = useAppConfig()
+console.log('appConfig', appConfig);
+
 const { data: navigation } = await useAsyncData('navigation', () => {
   return queryCollectionNavigation('page', ['stem', 'title', 'path', 'showPageInMenu', 'body'])
 })
@@ -36,7 +39,7 @@ const items = computed(() => {
       </template>
 
       <!-- dark mode -->
-      <div class="mt-4">
+      <div v-if="appConfig.app.darkMode" class="mt-4">
         <DarkModeButton />
       </div>
     </nav>

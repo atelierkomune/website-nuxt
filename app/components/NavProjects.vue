@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const appConfig = useAppConfig()
 const props = defineProps<{
     path: string
 }>()
@@ -26,7 +25,7 @@ const { data: surroundings } = await useAsyncData(
           </div>
         </UButton>
       </div>
-      <div v-if="appConfig.app.darkMode">
+      <div>
         <UButton 
           v-if="surroundings[1]?.path"
           variant="solid"

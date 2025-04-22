@@ -1,4 +1,8 @@
 export default defineAppConfig({
+  // https://nuxt.com/docs/guide/directory-structure/app-config
+  app: {
+    darkMode: false
+  },
   // https://ui.nuxt.com/getting-started/theme#design-system
   ui: {
     colors: {
