@@ -33,7 +33,7 @@ const prevImage = () => {
                 @click="nextImage()">
                 <NuxtImg :src="item.src" :alt="item.alt" />
                 <div class="md:hidden flex w-full justify-between mb-8">
-                    <caption class="block">
+                    <caption class="flex gap-2">
                         <strong v-if="item.company">
                             {{ item.company }}
                         </strong>
@@ -48,7 +48,7 @@ const prevImage = () => {
             </div>
         </div>
         <div class="hidden md:grid grid grid-cols-3 w-full justify-between mt-16">
-            <div class="flex items-center justify-start text-xs">
+            <div class="flex gap-2 items-center justify-start text-xs">
                 <strong v-if="props.images?.[currentIndex]?.company">
                     {{ props.images?.[currentIndex]?.company }}
                 </strong>
