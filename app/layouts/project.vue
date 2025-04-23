@@ -1,15 +1,10 @@
 <template>
-  <div class="min-h-screen grid gap-8 p-12 pb-32">
+  <div class="min-h-screen grid gap- p-12 pb-32">
 
     <div class="flex">
-      <UButton
-        class="p-0 rounded-none"
-        variant="ghost"
-        color="neutral"
-        size="xs"
-        to="/">
+      <NuxtLink to="/">
         <LogoImg />
-      </UButton>
+      </NuxtLink>
     </div>
 
     <div class="w-full md:grid">

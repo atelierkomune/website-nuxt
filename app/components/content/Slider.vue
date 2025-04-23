@@ -39,8 +39,8 @@ const prevImage = () => {
                 </div>
             </div>
         </div>
-        <div class="hidden md:grid grid grid-cols-3 w-full justify-between mt-4">
-            <caption class="block">
+        <div class="hidden md:grid grid grid-cols-3 w-full justify-between mt-16">
+            <caption class="block text-left text-xs">
                 {{ props.images?.[currentIndex]?.caption }}
             </caption>
             <small class="text-center">
@@ -59,7 +59,7 @@ const prevImage = () => {
     position: relative;
 
     @media (min-width: 768px) {
-        height: 75vh;
+        height: calc(100vh - 16rem);
     }
 }
 

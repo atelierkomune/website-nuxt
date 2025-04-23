@@ -14,6 +14,7 @@ const { data: surroundings } = await useAsyncData(
       v-if="surroundings[0]?.path"
       variant="ghost"
       color="neutral" 
+      class="text-xs uppercase"
       :to="surroundings[0]?.path">
       Projet précédent
     </ULink>
@@ -22,6 +23,7 @@ const { data: surroundings } = await useAsyncData(
       v-if="surroundings[1]?.path"
       variant="ghost"
       color="neutral" 
+      class="text-xs uppercase"
       :to="surroundings[1]?.path">
       Projet suivant
     </ULink>
