@@ -14,7 +14,7 @@ const { data: surroundings } = await useAsyncData(
       v-if="surroundings[0]?.path"
       variant="ghost"
       color="neutral" 
-      class="text-xs uppercase"
+      class="text-xs uppercase text-right"
       :to="surroundings[0]?.path">
       Projet précédent
     </ULink>

@@ -23,7 +23,7 @@ const prevImage = () => {
 <template>
     <div>
         <div class="slider">
-            <div class="hidden md:block slide-prev" />
+            <div class="hidden md:block slide-prev" @click="prevImage()"/>
             <div
                 v-for="(item, index) in props.images" 
                 :key="`${item.src}-${index}`"
@@ -44,10 +44,10 @@ const prevImage = () => {
             <caption class="block text-left text-xs">
                 {{ props.images?.[currentIndex]?.caption }}
             </caption>
-            <small class="text-center">
+            <small class="flex items-center justify-center">
                 {{ currentIndex + 1 }} / {{ props.images.length }}
             </small>
-            <div class="flex justify-end">
+            <div class="flex items-center justify-end">
                 <NavProjects class="hidden md:flex gap-2 items-center" :path="route.path" />
             </div>
         </div>
@@ -74,17 +74,18 @@ const prevImage = () => {
         height: 100%;
         width: 100%;
         cursor: e-resize;
-        transform: scale(0.98);
+        transform: scale(1.01);
     }
 }
 
 .slide-prev {
     position: absolute;
+    z-index: 10;
     top: 0;
     bottom: 0;
     left: 0;
     width: 50%;
-    background: red;
+    cursor: w-resize;
 }
 
 .slide--active {
