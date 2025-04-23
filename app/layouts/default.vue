@@ -4,20 +4,24 @@ const appConfig = useAppConfig()
 const showDiapo = ref(true)
 if(import.meta.client) {
   showDiapo.value = !sessionStorage.getItem('showDiapo')
-  sessionStorage.setItem('showDiapo', '1')
 }
 const diapoImages = computed(() => appConfig.app?.diapo?.images ? Object.values(appConfig.app.diapo.images) : [])
+const currentDiapoImage = ref(Math.ceil(Math.random() * diapoImages.value.length - 1))
+const enter = () => {
+  showDiapo.value = false
+  sessionStorage.setItem('showDiapo', '1')
+}
 </script>
 <template>
   <div class="min-h-screen m-auto">
 
-    <div v-if="diapoImages.length && showDiapo" class="fixed z-100 h-screen w-full grid items-center justify-center cursor-crosshair" @click="showDiapo = false">
+    <div v-if="diapoImages.length && showDiapo" class="fixed z-100 h-screen w-full grid items-center justify-center cursor-crosshair bg-theme" @click="enter">
       <img src="/logo.gif" class="z-10 w-60" :alt="appConfig.app.sitename">
-      <NuxtImg 
-        v-for="image in diapoImages" 
+      <NuxtImg
+        v-for="(image, index) in diapoImages"
         :key="image" 
         :src="image" 
-        class="absolute w-full h-full object-cover"  
+        :class="['absolute w-full h-full object-contain p-8', {'hidden': currentDiapoImage !== index}]"
         />
     </div>
 

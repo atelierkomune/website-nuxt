@@ -23,6 +23,7 @@ const prevImage = () => {
 <template>
     <div>
         <div class="slider">
+            <div class="hidden md:block slide-prev" />
             <div
                 v-for="(item, index) in props.images" 
                 :key="`${item.src}-${index}`"
@@ -75,6 +76,15 @@ const prevImage = () => {
         cursor: e-resize;
         transform: scale(0.98);
     }
+}
+
+.slide-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    background: red;
 }
 
 .slide--active {

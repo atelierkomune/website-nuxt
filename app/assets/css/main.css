@@ -78,3 +78,7 @@
   font-weight: bold;
   color: var(--ui-text-highlighted)
 }
+
+.bg-theme {
+  background-color: var(--ui-bg);
+}
