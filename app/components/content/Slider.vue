@@ -4,7 +4,8 @@ const props = defineProps<{
     images: {
         src: string,
         alt: string,
-        caption: string,
+        company: string,
+        project: string,
     }[]
 }>()
 
@@ -30,9 +31,14 @@ const prevImage = () => {
                 :class="['slide grid items-center', { 'slide--active': index === currentIndex }]"
                 @click="nextImage()">
                 <NuxtImg :src="item.src" :alt="item.alt" />
-                <div class="md:hidden flex w-full justify-between">
+                <div class="md:hidden flex w-full justify-between mb-8">
                     <caption class="block">
-                        {{ item.caption }}
+                        <strong v-if="item.company">
+                            {{ item.company }}
+                        </strong>
+                        <span v-if="item.project">
+                            {{ item.project }}
+                        </span>
                     </caption>
                     <small class="text-right">
                         {{ index + 1 }} / {{ props.images.length }}
@@ -42,7 +48,12 @@ const prevImage = () => {
         </div>
         <div class="hidden md:grid grid grid-cols-3 w-full justify-between mt-16">
             <div class="flex items-center justify-start text-xs">
-                {{ props.images?.[currentIndex]?.caption }}
+                <strong v-if="props.images?.[currentIndex]?.company">
+                    {{ props.images?.[currentIndex]?.company }}
+                </strong>
+                <span v-if="props.images?.[currentIndex]?.project">
+                    {{ props.images?.[currentIndex]?.project }}
+                </span>
             </div>
             <div class="flex items-center justify-center text-xs">
                 {{ currentIndex + 1 }} / {{ props.images.length }}
@@ -51,7 +62,7 @@ const prevImage = () => {
                 <NavProjects class="hidden md:flex gap-2 items-center" :path="route.path" />
             </div>
         </div>
-        <NavProjects class="md:hidden" :path="route.path" />
+        <NavProjects class="md:hidden flex gap-2 items-center justify-center w-full" :path="route.path" />
     </div>
 </template>
 

@@ -11,19 +11,19 @@ const { data: surroundings } = await useAsyncData(
 <template>
   <div v-if="surroundings">
     <ULink 
-      v-if="surroundings[0]?.path"
       variant="ghost"
       color="neutral" 
       class="text-xs uppercase text-right"
+      :disabled="!surroundings[0]?.path"
       :to="surroundings[0]?.path">
       Projet précédent
     </ULink>
     <span>|</span>
     <ULink 
-      v-if="surroundings[1]?.path"
       variant="ghost"
       color="neutral" 
       class="text-xs uppercase"
+      :disabled="!surroundings[1]?.path"
       :to="surroundings[1]?.path">
       Projet suivant
     </ULink>
