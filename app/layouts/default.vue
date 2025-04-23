@@ -6,13 +6,19 @@ if(import.meta.client) {
   showDiapo.value = !sessionStorage.getItem('showDiapo')
   sessionStorage.setItem('showDiapo', '1')
 }
+const diapoImages = computed(() => appConfig.app?.diapo?.images ? Object.values(appConfig.app.diapo.images) : [])
 </script>
 <template>
   <div class="min-h-screen m-auto">
 
-    <div v-if="appConfig.app.diapoImages?.length && showDiapo" class="fixed z-100 h-screen w-full grid items-center justify-center cursor-crosshair" @click="showDiapo = false">
-      <img src="/logo.gif" class="z-10 w-60" />
-      <NuxtImg class="absolute w-full h-full object-cover" v-for="image in appConfig.app.diapoImages" :key="image" :src="image" />
+    <div v-if="diapoImages.length && showDiapo" class="fixed z-100 h-screen w-full grid items-center justify-center cursor-crosshair" @click="showDiapo = false">
+      <img src="/logo.gif" class="z-10 w-60" :alt="appConfig.app.sitename">
+      <NuxtImg 
+        v-for="image in diapoImages" 
+        :key="image" 
+        :src="image" 
+        class="absolute w-full h-full object-cover"  
+        />
     </div>
 
     <UDrawer v-model:open="isOpen" fixed direction="left" class="w-full">
