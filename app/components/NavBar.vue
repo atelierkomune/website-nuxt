@@ -20,20 +20,20 @@ const items = computed(() => {
     <NuxtLink to="/">
       <LogoImg />
     </NuxtLink>
-    <nav aria-label="Navigation" class="grid gap-2">
+    <nav aria-label="Navigation" class="grid gap-0">
       <template v-for="item in items" :key="item.to">
         <!-- link -->
-        <ULink v-if="!item.page" block type="button" variant="ghost" class="justify-start font-extrabold" :to="item.to">
+        <ULink v-if="!item.page" block type="button" variant="ghost" class="uppercase text-[10px] justify-start font-extrabold" :to="item.to">
           {{ item.label }}
         </ULink>
 
         <!-- content -->
-        <UCollapsible v-else class="w-full">
-          <ULink block type="button" variant="ghost" class="justify-start font-extrabold font-normal" :to="`#${item.stem}`">
+        <UCollapsible v-else class="w-full leading-3">
+          <ULink block type="button" variant="ghost" class="uppercase text-[10px] justify-start font-extrabold font-normal" :to="`#${item.stem}`">
             {{ item.label }}
           </ULink>
           <template #content>
-            <ContentRenderer :value="item.page" class="text-xs leading-5 p-2" />
+            <ContentRenderer :value="item.page" class="text-[10px] leading-4 py-2" />
           </template>
         </UCollapsible>
       </template>

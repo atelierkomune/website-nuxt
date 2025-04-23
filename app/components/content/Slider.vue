@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const route = useRoute()
 const props = defineProps<{
     images: {
         src: string,
@@ -27,7 +28,7 @@ const prevImage = () => {
                 :key="`${item.src}-${index}`"
                 :class="['slide grid items-center', { 'slide--active': index === currentIndex }]"
                 @click="nextImage()">
-                <img :src="item.src" :alt="item.alt">
+                <NuxtImg :src="item.src" :alt="item.alt" />
                 <div class="md:hidden flex w-full justify-between">
                     <caption class="block">
                         {{ item.caption }}
@@ -38,28 +39,18 @@ const prevImage = () => {
                 </div>
             </div>
         </div>
-        <div class="hidden md:flex w-full justify-between mt-4">
-            <div class="flex gap-4 justify-center">
-                <UButton 
-                    :disabled="currentIndex <= 0" 
-                    variant="ghost" 
-                    size="sm" 
-                    icon="i-mdi-arrow-left" 
-                    @click="prevImage" />
-                <UButton 
-                    :disabled="currentIndex >= props.images.length - 1" 
-                    variant="ghost" 
-                    size="sm" 
-                    trailing-icon="i-mdi-arrow-right" 
-                    @click="nextImage" />
-            </div>
+        <div class="hidden md:grid grid grid-cols-3 w-full justify-between mt-4">
             <caption class="block">
                 {{ props.images?.[currentIndex]?.caption }}
             </caption>
-            <small class="text-right">
+            <small class="text-center">
                 {{ currentIndex + 1 }} / {{ props.images.length }}
             </small>
+            <div class="flex justify-end">
+                <NavProjects class="hidden md:flex gap-2 items-center" :path="route.path" />
+            </div>
         </div>
+        <NavProjects class="md:hidden" :path="route.path" />
     </div>
 </template>
 
@@ -68,7 +59,7 @@ const prevImage = () => {
     position: relative;
 
     @media (min-width: 768px) {
-        height: 50vh;
+        height: 75vh;
     }
 }
 
