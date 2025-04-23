@@ -11,13 +11,14 @@ const props = defineProps<{
 
 const currentIndex = ref<number>(0)
 const nextImage = () => {
-    console.log('nextImage', Math.min(currentIndex.value + 1, props.images.length - 1));
-
-    currentIndex.value = Math.min(currentIndex.value + 1, props.images.length - 1)
+    currentIndex.value += 1
+    if(currentIndex.value > props.images.length - 1)
+        currentIndex.value = 0
 }
 const prevImage = () => {
-    console.log('prevImage', currentIndex.value, Math.max(currentIndex.value - 1, 0));
-    currentIndex.value = Math.max(currentIndex.value - 1, 0)
+    currentIndex.value -= 1
+    if(currentIndex.value < 0)
+        currentIndex.value = props.images.length - 1
 }
 </script>
 
