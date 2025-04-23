@@ -41,12 +41,12 @@ const prevImage = () => {
             </div>
         </div>
         <div class="hidden md:grid grid grid-cols-3 w-full justify-between mt-16">
-            <caption class="block text-left text-xs">
+            <div class="flex items-center justify-start text-xs">
                 {{ props.images?.[currentIndex]?.caption }}
-            </caption>
-            <small class="flex items-center justify-center">
+            </div>
+            <div class="flex items-center justify-center text-xs">
                 {{ currentIndex + 1 }} / {{ props.images.length }}
-            </small>
+            </div>
             <div class="flex items-center justify-end">
                 <NavProjects class="hidden md:flex gap-2 items-center" :path="route.path" />
             </div>

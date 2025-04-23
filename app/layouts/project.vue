@@ -11,6 +11,8 @@
       <NuxtPage />
     </div>
 
-    <ProjectsList class="mt-16"/>
+    <ClientOnly>
+      <ProjectsList class="mt-16"/>
+    </ClientOnly>
   </div>
 </template>
