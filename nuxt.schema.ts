@@ -12,6 +12,11 @@ export default defineNuxtSchema({
             title: 'Dark mode',
             description: 'Enable dark mode on website',
             default: false,
+        }),
+        diapoImages: field({
+          type: 'array',
+          title: 'Diaporama Images',
+          default: [],
         })
       }
     })

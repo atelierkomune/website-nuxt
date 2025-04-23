@@ -11,7 +11,7 @@ const { data: projects } = await useAsyncData(
       <NuxtLink :to="project.path" class="project-link">
         <img
           :src="project.image || '/projects/placeholder.jpg'"
-          :alt="project.title" 
+          :alt="project.title"
           class="project-img">
         <strong class="project-title text-sm md:text-xs">{{ project.title }}</strong>
       </NuxtLink>
@@ -23,6 +23,10 @@ const { data: projects } = await useAsyncData(
 .project {
   position: relative;
   z-index: 1;
+}
+
+.project-link {
+  cursor: crosshair !important;
 }
 
 .project-img {

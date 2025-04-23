@@ -2,7 +2,8 @@ export default defineAppConfig({
   // https://nuxt.com/docs/guide/directory-structure/app-config
   // https://content.nuxt.com/docs/studio/config
   app: {
-    darkMode: true
+    darkMode: true,
+    diapoImages: ['/projects/TNA/TNA-MEDIATHEQUE-VAUCLUSE.jpg']
   },
   // https://ui.nuxt.com/getting-started/theme#design-system
   ui: {
