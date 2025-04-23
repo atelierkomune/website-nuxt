@@ -6,11 +6,11 @@ export default defineAppConfig({
     darkMode: true,
     diapo: {
       images: {
-        one: '/projects/TNA/TNA-MEDIATHEQUE-VAUCLUSE.jpg',
-        two: '/projects/TNA/TNA-MEDIATHEQUE-VAUCLUSE.jpg',
-        three: '/projects/TNA/TNA-MEDIATHEQUE-VAUCLUSE.jpg',
-        four: '/projects/TNA/TNA-MEDIATHEQUE-VAUCLUSE.jpg',
-        five: '/projects/TNA/TNA-MEDIATHEQUE-VAUCLUSE.jpg',
+        one: '/projects/ATELIER-MATERIA_CENTRE-TECHNIQUE/ATELIER-MATERIA_CENTRE-TECHNIQUE-AJACCIO-02.jpg',
+        two: '/projects/ATELIER-MATERIA_CENTRE-TECHNIQUE/ATELIER-MATERIA_CENTRE-TECHNIQUE-AJACCIO.jpg',
+        three: '/projects/LANOIRE-N-COURRIAN/LANOIRE-N-COURRIAN_LOGEMENTS-BORDEAUX.jpg',
+        four: '/projects/BERRANGER-N-VINCENT/BERRANGER-N-VINCENT_MEDIATHEQUE-SAINT-YVI-02.jpg',
+        five: '/projects/ATELIER-MATERIA_LOGEMENTS-APPIETTO/ATELIER-MATERIA_LOGEMENTS-APPIETTO-02.jpg',
       }
     }
   },
