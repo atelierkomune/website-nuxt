@@ -2,7 +2,7 @@ export default defineAppConfig({
   // https://nuxt.com/docs/guide/directory-structure/app-config
   // https://content.nuxt.com/docs/studio/config
   app: {
-    darkMode: false
+    darkMode: true
   },
   // https://ui.nuxt.com/getting-started/theme#design-system
   ui: {
