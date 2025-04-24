@@ -31,7 +31,7 @@ const prevImage = () => {
                 :key="`${item.src}-${index}`"
                 :class="['slide grid items-center', { 'slide--active': index === currentIndex }]"
                 @click="nextImage()">
-                <NuxtImg :src="item.src" :alt="item.alt" />
+                <NuxtImg :src="item.src" :alt="item.alt" sizes="100vw sm:50vw md:400px" />
                 <div class="md:hidden flex w-full justify-between mb-8">
                     <caption class="flex gap-2">
                         <strong v-if="item.company">

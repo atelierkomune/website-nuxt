@@ -9,10 +9,12 @@ const { data: projects } = await useAsyncData(
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 md:p-4">
     <div v-for="project in projects" :key="project.path" class="project">
       <NuxtLink :to="project.path" class="project-link">
-        <img
+        <NuxtImg
           :src="project.image || '/projects/placeholder.jpg'"
           :alt="project.title"
-          class="project-img">
+          sizes="100vw sm:50vw md:400px"
+          :placeholder="[50, 25, 75, 5]"
+          class="project-img"/>
         <strong class="project-title text-sm md:text-xs">{{ project.title }}</strong>
       </NuxtLink>
     </div>

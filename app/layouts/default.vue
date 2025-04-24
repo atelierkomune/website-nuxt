@@ -21,6 +21,8 @@ const enter = () => {
         v-for="(image, index) in diapoImages"
         :key="image" 
         :src="image" 
+        sizes="100vw sm:50vw md:400px"
+        placeholder
         :class="['absolute w-full h-full object-contain p-8', {'hidden': currentDiapoImage !== index}]"
         />
     </div>
