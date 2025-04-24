@@ -1,4 +1,11 @@
 <script setup lang="ts">
+const props = withDefaults(
+  defineProps<{
+  minCols?: 1 | 2
+}>(),
+{
+  minCols: 1
+})
 const { data: projects } = await useAsyncData(
   'projects-content-grid', 
   () => queryCollection('projects').select('title', 'path', 'image', 'tags').all(),
@@ -6,7 +13,7 @@ const { data: projects } = await useAsyncData(
 </script>
 
 <template>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 md:p-4">
+  <div :class="`grid grid-cols-${props.minCols} sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 md:p-4`">
     <div v-for="project in projects" :key="project.path" class="project">
       <NuxtLink :to="project.path" class="project-link">
         <NuxtImg
@@ -15,7 +22,7 @@ const { data: projects } = await useAsyncData(
           sizes="100vw sm:50vw md:400px"
           :placeholder="[50, 25, 75, 5]"
           class="project-img"/>
-        <strong class="project-title text-sm md:text-xs">{{ project.title }}</strong>
+        <strong class="project-title text-xs">{{ project.title }}</strong>
       </NuxtLink>
     </div>
   </div>
@@ -29,6 +36,10 @@ const { data: projects } = await useAsyncData(
 
 .project-link {
   cursor: crosshair !important;
+}
+
+.project-link.router-link-exact-active {
+  opacity: 0.25;
 }
 
 .project-img {
@@ -50,10 +61,6 @@ const { data: projects } = await useAsyncData(
 @media (min-width: 768px) {
   .project-title {
     opacity: 0;
-  }
-
-  .project .router-link-exact-active {
-    opacity: 0.25;
   }
 
   .project:hover .project-title {

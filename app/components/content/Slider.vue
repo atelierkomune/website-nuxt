@@ -32,19 +32,6 @@ const prevImage = () => {
                 :class="['slide grid items-center', { 'slide--active': index === currentIndex }]"
                 @click="nextImage()">
                 <NuxtImg :src="item.src" :alt="item.alt" sizes="100vw sm:50vw md:400px" />
-                <div class="md:hidden flex w-full justify-between mb-8">
-                    <caption class="flex gap-2">
-                        <strong v-if="item.company">
-                            {{ item.company }}
-                        </strong>
-                        <span v-if="item.project">
-                            {{ item.project }}
-                        </span>
-                    </caption>
-                    <small class="text-right">
-                        {{ index + 1 }} / {{ props.images.length }}
-                    </small>
-                </div>
             </div>
         </div>
         <div class="hidden md:grid grid grid-cols-3 w-full justify-between mt-16">
@@ -63,7 +50,7 @@ const prevImage = () => {
                 <NavProjects class="hidden md:flex gap-2 items-center" :path="route.path" />
             </div>
         </div>
-        <NavProjects class="md:hidden flex gap-2 items-center justify-center w-full" :path="route.path" />
+        <NavProjects class="md:hidden flex gap-2 mt-8 items-center justify-center w-full" :path="route.path" />
     </div>
 </template>
 

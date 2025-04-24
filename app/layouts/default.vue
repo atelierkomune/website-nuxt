@@ -40,14 +40,12 @@ const enter = () => {
           <NavBar />
         </div>
 
-        <UButton
-          class="md:hidden p-0 rounded-none"
-          variant="ghost"
-          color="neutral"
+        <ULink
+          class="md:hidden cursor-pointer"
           size="xs"
           @click="isOpen = true">
           <LogoImg />
-        </UButton>
+        </ULink>
       </div>
 
       <div class="w-full md:grid">
