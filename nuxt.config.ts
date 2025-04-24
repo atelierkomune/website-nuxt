@@ -23,7 +23,9 @@ export default defineNuxtConfig({
   },
 
   image: {
-    baseURL: 'https://newatelierkomune.barquette.club'
+    cloudflare: {
+      baseURL: 'https://newatelierkomune.barquette.club'
+    }
   },
 
   css: ['~/assets/css/main.css'],
