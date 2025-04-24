@@ -7,15 +7,15 @@
 }
 
 .page h1 {
-  @apply text-2xl font-bold mb-8;
+  @apply text-xl font-bold mb-6;
 }
 
 .page h2 {  
-  @apply text-xl font-bold mb-3;
+  @apply text-lg font-bold mb-4;
 }
 
 .page h3 {
-  @apply text-lg font-bold mb-2;
+  @apply text-sm font-bold mb-2;
 }
 
 .page p {

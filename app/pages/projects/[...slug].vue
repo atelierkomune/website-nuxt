@@ -25,7 +25,7 @@ if (!page.value) {
 
 <template>
   <div class="page page--projects">
-    <h1 class="md:hidden">{{ page?.title }}</h1>
+    <h1 class="md:hidden mt-8">{{ page?.title }}</h1>
     <ContentRenderer v-if="page" :value="page" />
   </div>
 </template>
