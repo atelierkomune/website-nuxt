@@ -1,8 +1,8 @@
 <template>
   <div class="min-h-screen grid gap- p-12 pb-32">
 
-    <div class="flex">
-      <NuxtLink to="/" class="sticky z-10 top-8">
+    <div class="flex sticky z-10 top-8">
+      <NuxtLink to="/">
         <LogoImg />
       </NuxtLink>
     </div>
