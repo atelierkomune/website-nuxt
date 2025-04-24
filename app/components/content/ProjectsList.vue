@@ -14,7 +14,7 @@ const { data: projects } = await useAsyncData(
 
 <template>
   <div :class="`grid grid-cols-${props.minCols} sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 md:p-4`">
-    <div v-for="project in projects" :key="project.path" class="project">
+    <div v-for="project in projects" :key="project.path" class="project flex items-center justify-center">
       <NuxtLink :to="project.path" class="project-link">
         <NuxtImg
           :src="project.image || '/projects/placeholder.jpg'"
@@ -44,18 +44,15 @@ const { data: projects } = await useAsyncData(
 
 .project-img {
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: contain;
+  /* aspect-ratio: 1; */
+  /* object-fit: contain; */
 }
 
 .project-title {
-  position: absolute;
+  display: block;
   text-align: center;
-  padding: 0.5em 0 0 0;
-  z-index: 10;
-  top: 100%;
-  left: 0;
-  right: 0;
+  padding-top: 1em;
+  transition: 0.1s ease;
 }
 
 @media (min-width: 768px) {
