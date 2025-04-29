@@ -16,12 +16,12 @@ export default defineNuxtSchema({
                 primary: field({
                   title: 'Primary',
                   type: 'string',
-                  required: ['slate', 'teal', 'zinc']
+                  required: ['slate', 'teal', 'zinc', 'pink']
                 }),
                 neutral: field({
                   title: 'Neutral',
                   type: 'string',
-                  required: ['slate', 'teal', 'zinc']
+                  required: ['slate', 'teal', 'zinc', 'pink']
                 }),
               }
             })
