@@ -8,15 +8,18 @@ export default defineNuxtSchema({
       icon: 'i-mdi-application-brackets',
       fields: {
         ui: group({
-          title: 'Color theme',
+          title: 'Ui',
           fields: {
             colors: group({
+              title: 'color',
               fields: {
                 primary: field({
+                  title: 'Primary',
                   type: 'string',
                   required: ['slate', 'teal', 'zinc']
                 }),
                 neutral: field({
+                  title: 'Neutral',
                   type: 'string',
                   required: ['slate', 'teal', 'zinc']
                 }),
@@ -28,10 +31,10 @@ export default defineNuxtSchema({
           type: 'string',
         }),
         darkMode: field({
-            type: 'boolean',
-            title: 'Dark mode',
-            description: 'Enable dark mode on website',
-            default: false,
+          type: 'boolean',
+          title: 'Dark mode',
+          description: 'Enable dark mode on website',
+          default: false,
         }),
         diapo: group({
           title: 'Diapo',
