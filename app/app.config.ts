@@ -14,7 +14,7 @@ export default defineAppConfig({
         five: '/projects/ATELIER-MATERIA_LOGEMENTS-APPIETTO/ATELIER-MATERIA_LOGEMENTS-APPIETTO-02.jpg',
       }
     },
-
+    background: 'red',
     fonts: {
       title: 'comics sans',
       paragraphe: 'comics sans'

@@ -7,25 +7,8 @@ export default defineNuxtSchema({
       description: 'App configuration',
       icon: 'i-mdi-application-brackets',
       fields: {
-        ui: group({
-          title: 'Ui',
-          fields: {
-            colors: group({
-              title: 'color',
-              fields: {
-                primary: field({
-                  title: 'Primary',
-                  type: 'string',
-                  required: ['slate', 'teal', 'zinc', 'pink']
-                }),
-                neutral: field({
-                  title: 'Neutral',
-                  type: 'string',
-                  required: ['slate', 'teal', 'zinc', 'pink']
-                }),
-              }
-            })
-          }
+        background: field({
+          type: 'string',
         }),
         sitename: field({
           type: 'string',
@@ -67,6 +50,26 @@ export default defineNuxtSchema({
           }
         })
       }
-    })
+    }),
+    ui: group({
+      title: 'Ui',
+      fields: {
+        colors: group({
+          title: 'color',
+          fields: {
+            primary: field({
+              title: 'Primary',
+              type: 'string',
+              required: ['slate', 'teal', 'zinc', 'pink']
+            }),
+            neutral: field({
+              title: 'Neutral',
+              type: 'string',
+              required: ['slate', 'teal', 'zinc', 'pink']
+            }),
+          }
+        })
+      }
+    }),
   }
 })
