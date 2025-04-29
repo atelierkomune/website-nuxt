@@ -7,9 +7,6 @@ export default defineNuxtSchema({
       description: 'App configuration',
       icon: 'i-mdi-application-brackets',
       fields: {
-        background: field({
-          type: 'string',
-        }),
         sitename: field({
           type: 'string',
         }),

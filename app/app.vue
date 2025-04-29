@@ -1,5 +1,12 @@
 <script setup lang="ts">
 const appConfig = useAppConfig()
+
+if (import.meta.client) {
+  if (appConfig.app.fonts?.title)
+    document.documentElement.style.setProperty('--font-serif', `'${appConfig.app.fonts?.title}', sans-serif`)
+  if (appConfig.app.fonts?.paragraphe)
+    document.documentElement.style.setProperty('--font-sans', `'${appConfig.app.fonts?.paragraphe}', sans`)
+}
 </script>
 
 <template>
@@ -9,13 +16,3 @@ const appConfig = useAppConfig()
     </NuxtLayout>
   </UApp>
 </template>
-
-<style>
-body {
-  background-color:  v-bind('appConfig.app.background');
-}
-@theme static {
-  --font-sans: v-bind('appConfig.app.fonts?.paragraphe'), 'Outfit', sans-serif;
-  --font-serif: v-bind('appConfig.app.fonts?.paragraphe'), 'IBM Plex Mono', serif;
-}
-</style>
