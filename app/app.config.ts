@@ -15,8 +15,8 @@ export default defineAppConfig({
       }
     },
     fonts: {
-      title: 'Outfit',
-      paragraphe: 'IBM Plex Mono'
+      title: 'Tagesschrift',
+      paragraphe: 'Tagesschrift'
     }
   },
   // https://ui.nuxt.com/getting-started/theme#design-system
