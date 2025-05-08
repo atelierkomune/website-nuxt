@@ -4,7 +4,6 @@ export default defineAppConfig({
   app: {
     sitename: 'Atelier Komune',
     darkMode: true,
-
     diapo: {
       images: {
         one: '/projects/ATELIER-MATERIA_CENTRE-TECHNIQUE/ATELIER-MATERIA_CENTRE-TECHNIQUE-AJACCIO-02.jpg',
@@ -15,8 +14,8 @@ export default defineAppConfig({
       }
     },
     fonts: {
-      title: 'Tagesschrift',
-      paragraphe: 'Tagesschrift'
+      title: 'Outfit',
+      paragraphe: 'IBM Plex Mono'
     }
   },
   // https://ui.nuxt.com/getting-started/theme#design-system
