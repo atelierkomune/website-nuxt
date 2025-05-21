@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const appConfig = useAppConfig()
-console.log('appConfig', appConfig);
 
 const { data: navigation } = await useAsyncData('navigation', () => {
   return queryCollectionNavigation('page', ['stem', 'title', 'path', 'showPageInMenu', 'body'])
