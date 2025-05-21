@@ -30,7 +30,7 @@
   @apply mb-4;
 }
 
-.page--projects img {
+.page-projects img {
   max-height: 90vh;
   margin: 1rem 0;
 }

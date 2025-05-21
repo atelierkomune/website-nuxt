@@ -24,8 +24,13 @@ if (!page.value) {
 </script>
 
 <template>
-  <div class="page page--projects">
-    <h1 class="md:hidden mt-8">{{ page?.title }}</h1>
+  <div class="page-projects">
+    <h1 class="md:hidden mt-8 text-xs">
+      <span v-if="page?.company || page?.project">
+        <strong>{{ page?.company }}</strong> {{ page?.project }}
+      </span>
+      <span v-else>{{ page?.title }}</span>
+    </h1>
     <ContentRenderer v-if="page" :value="page" />
   </div>
 </template>

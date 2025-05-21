@@ -14,7 +14,7 @@ const { data: projects } = await useAsyncData(
 
 <template>
   <div :class="`grid grid-cols-${props.minCols} sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 md:p-4`">
-    <div v-for="project in projects" :key="project.path" class="project p-4 relative grid items-center">
+    <div v-for="project in projects" :key="project.path" class="project sm:p-4 p-0 relative grid items-center">
       <NuxtLink :to="project.path" class="project-link" :title="`Voir le projet: ${project.title}`">
         <NuxtImg
           :src="project.image || '/projects/placeholder.jpg'"

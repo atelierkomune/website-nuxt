@@ -24,8 +24,8 @@ export default defineContentConfig({
         prefix: '/projects',
       },
       schema: z.object({
-        published: z.boolean(),
-        date: z.string(),
+        company: z.string(),
+        project: z.string(),
         image: z.string(),
         tags: z.array(z.string()),
       })
