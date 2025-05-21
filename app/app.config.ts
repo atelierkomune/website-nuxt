@@ -16,6 +16,11 @@ export default defineAppConfig({
     fonts: {
       title: 'Outfit',
       paragraphe: 'IBM Plex Mono'
+    },
+    logo: {
+      lightMode: '/logo.png',
+      darkMode: '/logo-dark.png',
+      landing: '/logo.gif',
     }
   },
   // https://ui.nuxt.com/getting-started/theme#design-system

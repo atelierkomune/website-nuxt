@@ -16,6 +16,15 @@ export default defineNuxtSchema({
           description: 'Enable dark mode on website',
           default: false,
         }),
+        logo: group({
+          title: 'Diapo',
+          icon: 'i-mdi-image',
+          fields: {
+            lightMode: field({ type: 'media' }),
+            darkMode: field({ type: 'media' }),
+            landing: field({ type: 'media' }),
+          }
+        }),
         diapo: group({
           title: 'Diapo',
           icon: 'i-mdi-image',
