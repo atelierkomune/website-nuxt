@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@vueuse/nuxt'
   ],
-
+  
   hub: {
     database: true
   },

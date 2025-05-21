@@ -42,15 +42,12 @@ export default defineNuxtSchema({
           }
         }),
         fonts: group({
-          title: 'Fonts',
+          title: 'Font',
           icon: 'i-mdi-format-text-variant',
           fields: {
-            title: field({
-              title: 'Title font',
-              type: 'string',
-            }),
             paragraphe: field({
-              title: 'Title font',
+              title: 'Font Default',
+              description: 'See to find more https://fonts.google.com/',
               type: 'string',
             })
           }
