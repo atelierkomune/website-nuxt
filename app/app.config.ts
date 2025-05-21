@@ -15,7 +15,7 @@ export default defineAppConfig({
     },
     fonts: {
       title: 'Outfit',
-      paragraphe: 'Arial'
+      paragraphe: 'IBM Plex Mono'
     },
     logo: {
       lightMode: '/logo.png',
