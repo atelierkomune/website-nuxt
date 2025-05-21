@@ -14,26 +14,21 @@ const { data: projects } = await useAsyncData(
 
 <template>
   <div :class="`grid grid-cols-${props.minCols} sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 md:p-4`">
-    <div v-for="project in projects" :key="project.path" class="project">
-      <NuxtLink :to="project.path" class="project-link">
+    <div v-for="project in projects" :key="project.path" class="project p-4 relative grid items-center">
+      <NuxtLink :to="project.path" class="project-link" :title="`Voir le projet: ${project.title}`">
         <NuxtImg
           :src="project.image || '/projects/placeholder.jpg'"
           :alt="project.title"
           sizes="100vw sm:50vw md:400px"
           :placeholder="[50, 25, 75, 5]"
           class="project-img"/>
-        <strong class="project-title text-xs">{{ project.title }}</strong>
+        <span class="project-title text-[10px] ">{{ project.title }}</span>
       </NuxtLink>
     </div>
   </div>
 </template>
 
 <style scoped>
-.project {
-  position: relative;
-  z-index: 1;
-}
-
 .project-link {
   cursor: crosshair !important;
 }
@@ -44,18 +39,20 @@ const { data: projects } = await useAsyncData(
 
 .project-img {
   width: 100%;
-  aspect-ratio: 1;
+  max-height: 50vh;
+  /* aspect-ratio: 1; */
   object-fit: contain;
 }
 
 .project-title {
-  position: absolute;
+  /* position: absolute; */
+  display: block;
   text-align: center;
-  padding: 0.5em 0 0 0;
-  z-index: 10;
-  top: 100%;
+  padding: 2em 0 0 0;
+  /* z-index: 10; */
+  /* top: 100%;
   left: 0;
-  right: 0;
+  right: 0; */
 }
 
 @media (min-width: 768px) {

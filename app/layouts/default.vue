@@ -5,7 +5,7 @@ const showDiapo = ref(true)
 if(import.meta.client) {
   showDiapo.value = !sessionStorage.getItem('showDiapo')
 }
-const diapoImages = computed(() => appConfig.app?.diapo?.images ? Object.values(appConfig.app.diapo.images) : [])
+const diapoImages = computed(() => appConfig.app?.diapo?.images ? Object.values(appConfig.app.diapo.images).filter(src => src.length) : [])
 const currentDiapoImage = ref(Math.ceil(Math.random() * diapoImages.value.length - 1))
 const enter = () => {
   showDiapo.value = false
@@ -23,7 +23,7 @@ const enter = () => {
         :src="image" 
         sizes="100vw sm:50vw md:400px"
         placeholder
-        :class="['absolute w-full h-full object-contain p-8', {'hidden': currentDiapoImage !== index}]"
+        :class="['absolute w-full h-full object-cover p-0', {'hidden': currentDiapoImage !== index}]"
         />
     </div>
 

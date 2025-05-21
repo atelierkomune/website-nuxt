@@ -21,8 +21,8 @@ export default defineAppConfig({
   // https://ui.nuxt.com/getting-started/theme#design-system
   ui: {
     colors: {
-      primary: 'zinc',
-      neutral: 'zinc',
+      primary: 'neutral',
+      neutral: 'neutral',
     },
     button: {
       defaultVariants: {

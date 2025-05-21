@@ -55,14 +55,14 @@ export default defineNuxtSchema({
           title: 'color',
           fields: {
             primary: field({
-              title: 'Primary',
+              title: 'Light mode',
               type: 'string',
-              required: ['slate', 'teal', 'zinc', 'pink']
+              required: ['neutral', 'pink', 'slate', 'teal', 'zinc']
             }),
             neutral: field({
-              title: 'Neutral',
+              title: 'Dark mode',
               type: 'string',
-              required: ['slate', 'teal', 'zinc', 'pink']
+              required: ['neutral', 'pink', 'slate', 'teal', 'zinc']
             }),
           }
         })
