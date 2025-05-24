@@ -1,18 +1,13 @@
 <script setup>
 const colorMode = useColorMode()
-const colorModeCookie = useCookie('ak-color-mode') 
+
 const isDark = computed({
   get() {
     return colorMode.value === 'dark'
   },
   set() {
-    colorModeCookie.value = colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+    colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
   }
-})
-
-onMounted(() => {
-  if(colorModeCookie.value)
-    colorMode.preference = colorMode.value = colorModeCookie.value
 })
 
 </script>
@@ -26,9 +21,5 @@ onMounted(() => {
       size="xs"
       @click="isDark = !isDark"
     />
-
-    <!-- <template #fallback>
-      <div class="size-8" />
-    </template> -->
   </div>
 </template>

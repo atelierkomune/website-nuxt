@@ -1,7 +1,4 @@
 <script setup lang="ts">
-defineProps<{
-
-}>()
 const route = useRoute()
 const { data: projects } = await useAsyncData(
   'projects-tags',
@@ -18,7 +15,7 @@ const uniqueTags = computed(() => {
 <template>
   <div
     class="flex items-center"
-    v-for="tag in uniqueTags" 
+    v-for="tag in uniqueTags"
     :key="tag"
   >
     <NuxtLink
@@ -28,11 +25,11 @@ const uniqueTags = computed(() => {
     >
       {{ tag }}
     </NuxtLink>
-    <UButton 
+    <UButton
       v-if="tag === route.query.tag"
-      icon="mdi-close" 
-      to="/" 
-      size="xs" 
+      icon="mdi-close"
+      to="/"
+      size="xs"
       variant="ghost"
       class="ml-2 p-0"
     />
