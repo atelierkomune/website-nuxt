@@ -1,6 +1,7 @@
 <script setup lang="ts">
-const isOpen = ref(false)
+const route = useRoute()
 const appConfig = useAppConfig()
+const isOpen = ref(false)
 const showDiapo = ref(true)
 if(import.meta.client) {
   showDiapo.value = !sessionStorage.getItem('showDiapo')
@@ -11,6 +12,11 @@ const enter = () => {
   showDiapo.value = false
   sessionStorage.setItem('showDiapo', '1')
 }
+
+watch(() => route.fullPath, () => {
+  if(isOpen.value) isOpen.value = false
+})
+
 </script>
 <template>
   <div class="min-h-screen m-auto" :class="{ 'overflow-hidden': showDiapo }">
