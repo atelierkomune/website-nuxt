@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const route = useRoute()
 const props = withDefaults(
   defineProps<{
   minCols?: 1 | 2
@@ -6,10 +7,13 @@ const props = withDefaults(
 {
   minCols: 1
 })
-const { data: projects } = await useAsyncData(
+
+const { data: projectsCollection } = await useAsyncData(
   'projects-content-grid', 
   () => queryCollection('projects').select('title', 'path', 'image', 'tags').all(),
 )
+
+const projects = computed(() => projectsCollection.value?.filter((page) => !route.query.tag || page.tags?.includes(route.query.tag.toString())))
 </script>
 
 <template>
@@ -20,7 +24,7 @@ const { data: projects } = await useAsyncData(
           :src="project.image || '/projects/placeholder.jpg'"
           :alt="project.title"
           sizes="100vw sm:50vw md:400px"
-          :placeholder="[50, 25, 75, 5]"
+          :placeholder="[50, 50, 50, 10]"
           class="project-img"/>
         <span class="project-title text-[10px] ">{{ project.title }}</span>
       </NuxtLink>
@@ -40,19 +44,13 @@ const { data: projects } = await useAsyncData(
 .project-img {
   width: 100%;
   max-height: 50vh;
-  /* aspect-ratio: 1; */
   object-fit: contain;
 }
 
 .project-title {
-  /* position: absolute; */
   display: block;
   text-align: center;
   padding: 2em 0 0 0;
-  /* z-index: 10; */
-  /* top: 100%;
-  left: 0;
-  right: 0; */
 }
 
 @media (min-width: 768px) {

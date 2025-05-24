@@ -1,18 +1,24 @@
 <script setup>
 const colorMode = useColorMode()
-
+const colorModeCookie = useCookie('ak-color-mode') 
 const isDark = computed({
   get() {
     return colorMode.value === 'dark'
   },
   set() {
-    colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+    colorModeCookie.value = colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
   }
 })
+
+onMounted(() => {
+  if(colorModeCookie.value)
+    colorMode.preference = colorMode.value = colorModeCookie.value
+})
+
 </script>
 
 <template>
-  <ClientOnly v-if="!colorMode?.forced">
+  <div v-if="!colorMode?.forced">
     <UButton
       :icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'"
       color="neutral"
@@ -21,8 +27,8 @@ const isDark = computed({
       @click="isDark = !isDark"
     />
 
-    <template #fallback>
+    <!-- <template #fallback>
       <div class="size-8" />
-    </template>
-  </ClientOnly>
+    </template> -->
+  </div>
 </template>

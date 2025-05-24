@@ -15,21 +15,23 @@ const enter = () => {
 <template>
   <div class="min-h-screen m-auto" :class="{ 'overflow-hidden': showDiapo }">
 
-    <div v-if="diapoImages.length && showDiapo" class="fixed z-100 h-screen w-full grid items-center justify-center cursor-crosshair bg-theme" @click="enter">
-      <img 
-        v-if="appConfig.app.logo?.landing"
-        class="z-10 w-60"
-        :src="appConfig.app.logo?.landing"
-        :alt="appConfig.app.sitename">
-      <NuxtImg
-        v-for="(image, index) in diapoImages"
-        :key="image" 
-        :src="image" 
-        sizes="100vw sm:50vw md:400px"
-        placeholder
-        :class="['absolute w-full h-full object-cover p-0', {'hidden': currentDiapoImage !== index}]"
-        />
-    </div>
+    <client-only>
+      <div v-if="diapoImages.length && showDiapo" class="fixed z-100 h-screen w-full grid items-center justify-center cursor-crosshair bg-theme" @click="enter">
+        <img 
+          v-if="appConfig.app.logo?.landing"
+          class="z-10 w-60"
+          :src="appConfig.app.logo?.landing"
+          :alt="appConfig.app.sitename">
+        <NuxtImg
+          v-for="(image, index) in diapoImages"
+          :key="image" 
+          :src="image" 
+          sizes="100vw sm:50vw md:400px"
+          placeholder
+          :class="['absolute w-full h-full object-cover p-0', {'hidden': currentDiapoImage !== index}]"
+          />
+      </div>
+    </client-only>
 
     <UDrawer v-model:open="isOpen" fixed direction="left" class="w-full">
       <template #content>

@@ -28,7 +28,7 @@ const items = computed(() => {
 
         <!-- content -->
         <UCollapsible v-else class="w-full leading-3">
-          <ULink block type="button" variant="ghost" class="uppercase text-[10px] justify-start font-extrabold font-normal" :to="`#${item.stem}`">
+          <ULink block type="button" variant="ghost" class="uppercase text-[10px] justify-start font-extrabold font-normal" to="#">
             {{ item.label }}
           </ULink>
           <template #content>
