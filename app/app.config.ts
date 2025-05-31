@@ -20,7 +20,7 @@ export default defineAppConfig({
     logo: {
       lightMode: '/logo.png',
       darkMode: '/logo-dark.png',
-      landing: '/logo.gif',
+      landing: '/ak-gif-01.gif',
     }
   },
   // https://ui.nuxt.com/getting-started/theme#design-system
