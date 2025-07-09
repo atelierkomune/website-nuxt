@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  scrollToTop: true
+})
+
 const route = useRoute()
 definePageMeta({
   layout: 'project'

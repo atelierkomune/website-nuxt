@@ -35,6 +35,12 @@ export default defineNuxtConfig({
       }
     ]
   },
+
+  router: {
+    options: {
+      scrollBehaviorType: undefined
+    }
+  },
   
   hub: {
     database: true
