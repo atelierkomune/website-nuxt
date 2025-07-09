@@ -47,7 +47,7 @@ watch(() => route.fullPath, () => {
 
     <div class="md:flex gap-8 p-12 pb-32">
 
-      <div class="sticky z-10 top-4 md:top-0 w-full max-w-60 md:relative">
+      <div class="sticky z-100 top-4 md:top-0 w-full max-w-60 md:relative">
         <div class="hidden md:block sticky top-4 flex justify-between items-center">
           <NavBar />
         </div>
