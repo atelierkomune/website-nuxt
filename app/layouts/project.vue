@@ -1,3 +1,10 @@
+<script lang="ts">
+
+onMounted(() => {
+  window.scrollTo({ top: 0 })
+})
+</script>
+
 <template>
   <div class="min-h-screen grid gap- p-12 pb-32">
 

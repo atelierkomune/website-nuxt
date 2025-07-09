@@ -20,6 +20,10 @@ watch(() => route.fullPath, () => {
   if(isOpen.value) isOpen.value = false
 })
 
+onMounted(() => {
+  window.scrollTo({ top: 0 })
+})
+
 </script>
 <template>
   <div class="min-h-screen m-auto">
