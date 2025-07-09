@@ -25,12 +25,6 @@ export default defineAppConfig({
       primary: 'neutral',
       neutral: 'neutral',
     },
-    button: {
-      defaultVariants: {
-        // Set default button color to neutral
-        // color: 'neutral'
-      }
-    },
     navigationMenu: {
       slots: {
         link: 'font-bold',
