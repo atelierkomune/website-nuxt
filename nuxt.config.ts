@@ -17,6 +17,14 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@vueuse/nuxt'
   ],
+
+  fonts: {
+    families: [
+      { name: 'Suisse', provider: 'local', weight: 'light' },
+      { name: 'Suisse', provider: 'local', weight: 'regular' },
+      { name: 'Suisse', provider: 'local', weight: 'bold' }
+    ],
+  },
   
   hub: {
     database: true

@@ -40,17 +40,6 @@ export default defineNuxtSchema({
               }
             })
           }
-        }),
-        fonts: group({
-          title: 'Font',
-          icon: 'i-mdi-format-text-variant',
-          fields: {
-            paragraphe: field({
-              title: 'Font Default',
-              description: 'See to find more https://fonts.google.com/',
-              type: 'string',
-            })
-          }
         })
       }
     }),

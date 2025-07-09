@@ -2,8 +2,8 @@
 @import "@nuxt/ui";
 
 @theme static {
-  --font-sans: 'Outfit', sans-serif;
-  --font-serif: 'IBM Plex Mono', serif;
+  --font-sans: 'Suisse', sans-serif;
+  --font-serif: 'Suisse', sans-serif;
 }
 
 .page h1 {
