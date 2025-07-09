@@ -1,4 +1,4 @@
-<script lang="ts">
+<script setup lang="ts">
 
 onMounted(() => {
   window.scrollTo({ top: 0 })
