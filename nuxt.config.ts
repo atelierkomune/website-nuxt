@@ -20,10 +20,20 @@ export default defineNuxtConfig({
 
   fonts: {
     families: [
-      { name: 'Suisse', provider: 'local', weight: 'light' },
-      { name: 'Suisse', provider: 'local', weight: 'regular' },
-      { name: 'Suisse', provider: 'local', weight: 'bold' }
-    ],
+      {
+        name: 'Suisse',
+        provider: 'local',
+        src: [
+          '/fonts/Suisse-Regular.eot',
+          '/fonts/Suisse-Regular.svg',
+          '/fonts/Suisse-Regular.woff2',
+          '/fonts/Suisse-Regular.woff',
+          '/fonts/Suisse-Regular.ttf'
+        ],
+        weight: 'regular',
+        style: 'normal'
+      }
+    ]
   },
   
   hub: {
