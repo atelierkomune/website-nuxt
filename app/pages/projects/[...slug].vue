@@ -1,11 +1,8 @@
 <script setup lang="ts">
-definePageMeta({
-  scrollToTop: true
-})
-
 const route = useRoute()
 definePageMeta({
-  layout: 'project'
+  layout: 'project',
+  scrollToTop: true
 })
 
 const { data: page } = await useAsyncData(

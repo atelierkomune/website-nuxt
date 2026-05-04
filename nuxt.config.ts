@@ -15,7 +15,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/content',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    'nuxt-studio'
   ],
 
   fonts: {
@@ -41,7 +42,7 @@ export default defineNuxtConfig({
       scrollBehaviorType: undefined
     }
   },
-  
+
   hub: {
     database: true
   },
@@ -66,12 +67,22 @@ export default defineNuxtConfig({
     preset: 'cloudflare_pages',
     experimental: {
       openAPI: true
-    }
+    },
   },
 
   content: {
     preview: {
       api: 'https://api.nuxt.studio'
+    }
+  },
+
+  studio: {
+    dev: false,
+    repository: {
+      provider: 'github', // 'github' or 'gitlab'
+      owner: 'atelierkomune',
+      repo: 'website-nuxt',
+      branch: 'main'
     }
   },
 
