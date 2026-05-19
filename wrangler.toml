@@ -1,0 +1,14 @@
+# Top-level configuration
+name = "atelier-komune"
+pages_build_output_dir = "./dist"
+compatibility_flags = [ "nodejs_compat", "streams_enable_constructors" ]
+compatibility_date = "2022-07-12"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "atelier-komune"
+database_id = "55dc0dd7-af69-46b9-b5d2-8c1d3d2a8e9b"
+migrations_dir = "./server/database/migrations"
+
+[vars]
+NUXT_BASE_URL = "https://atelierkomune.com"

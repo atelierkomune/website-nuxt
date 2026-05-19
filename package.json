@@ -3,14 +3,21 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "deploy": "npx nuxthub deploy"
+    "build:dev": "nuxi build --dotenv .env.dev --preset=cloudflare_pages",
+    "build:prod": "nuxi build --dotenv .env.prod --preset=cloudflare_pages",
+    "dev": "nuxi dev --remote",
+    "deploy": "npm run build:prod && npx wrangler pages deploy",
+    "deploy:without-rebuild": "npx wrangler pages deploy",
+    "generate:dev": "nuxi generate --dotenv .env.dev",
+    "generate:prod": "nuxi generate --dotenv .env.prod",
+    "rm:build": "rm -rf node_modules .nuxt dist",
+    "preview:dev": "nuxi preview",
+    "preview:prod": "nuxi preview --dotenv .env.prod"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.34",

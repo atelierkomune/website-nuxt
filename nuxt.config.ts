@@ -47,6 +47,14 @@ export default defineNuxtConfig({
     database: true
   },
 
+  nitro: {
+    prerender: {
+      autoSubfolderIndex: false,
+      crawlLinks: true,
+      routes: ['/']
+    },
+  },
+
   image: {
     cloudflare: {
       baseURL: 'https://newatelierkomune.barquette.club'
@@ -63,21 +71,18 @@ export default defineNuxtConfig({
     port: 3003
   },
 
-  nitro: {
-    preset: 'cloudflare_pages',
-    experimental: {
-      openAPI: true
-    },
-  },
-
-  content: {
-    preview: {
-      api: 'https://api.nuxt.studio'
+  vite: {
+    optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+      ]
     }
   },
 
   studio: {
-    dev: false,
+    dev: true,
+    route: '/_studio',
     repository: {
       provider: 'github', // 'github' or 'gitlab'
       owner: 'atelierkomune',
