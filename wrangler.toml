@@ -7,7 +7,7 @@ compatibility_date = "2022-07-12"
 [[d1_databases]]
 binding = "DB"
 database_name = "atelier-komune"
-database_id = "55dc0dd7-af69-46b9-b5d2-8c1d3d2a8e9b"
+database_id = "8dbcf26a-11cb-494f-bc5f-edf9e56a296a"
 migrations_dir = "./server/database/migrations"
 
 [vars]
