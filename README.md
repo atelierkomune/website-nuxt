@@ -1,5 +1,8 @@
 # Atelier Komune
 
+## start
+démarer le projet en local : npm run dev
+
 ## content
 
 ### page projet
